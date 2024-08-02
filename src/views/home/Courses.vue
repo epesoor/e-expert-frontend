@@ -52,6 +52,24 @@
                     src="https://blogassets.leverageedu.com/media/uploads/2022/11/17105928/importance-of-education.jpg"
                     alt="course"
                 >
+                <div class="course-price">
+                    65 500 тг/мес
+                </div>
+                <div class="flex mt-6 gap-6">
+                    <Button
+                        severity="danger"
+                        class="w-full"
+                    >
+                        Консультация
+                    </Button>
+                    <Button
+                        severity="danger"
+                        class="w-full"
+                        outlined
+                    >
+                        Оставить заявку
+                    </Button>
+                </div>
             </div>
         </div>
     </div>
@@ -83,5 +101,8 @@ import Button from '@/components/ui/Button.vue';
 }
 .course-image {
     @apply mt-4 rounded-xl;
+}
+.course-price {
+    @apply mt-4 text-lg font-semibold text-red-500;
 }
 </style>
