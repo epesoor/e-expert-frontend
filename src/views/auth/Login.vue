@@ -29,7 +29,7 @@
                                     :validate="required"
                                 />
                                 <PasswordField
-                                    class="mt-6"
+                                    class="mt-4"
                                     name="password"
                                     label="Пароль"
                                     :validate="required"

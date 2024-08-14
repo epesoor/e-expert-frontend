@@ -21,35 +21,8 @@
         />
         <Popover
             ref="popover"
-            unstyled
-        >
-            <div class="min-w-32 border bg-white rounded-lg">
-                <div class="menu-option">
-                    <Icon
-                        name="pi-tag"
-                        class="mr-2 w-4 h-4"
-                    />
-                    Мои курсы
-                </div>
-                <div class="menu-option">
-                    <Icon
-                        name="pi-sliders-h"
-                        class="mr-2 w-4 h-4"
-                    />
-                    Настройки
-                </div>
-                <div
-                    class="menu-option"
-                    @click="logOut"
-                >
-                    <Icon
-                        name="pi-sign-out"
-                        class="mr-2 w-4 h-4"
-                    />
-                    Выход
-                </div>
-            </div>
-        </Popover>
+            :options="options"
+        />
     </div>
 </template>
 
@@ -57,9 +30,9 @@
 import Icon from '@/components/ui/Icon.vue';
 import Button from '@/components/ui/Button.vue';
 import Avatar from 'primevue/avatar';
-import Popover from 'primevue/popover';
+import Popover from '@/components/ui/Popover.vue';
 
-import { ref, watch, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/authorization';
 import { storeToRefs } from 'pinia';
@@ -84,6 +57,24 @@ const label = computed(() => {
     }
     return 'P';
 });
+
+const options = computed(() => [
+    {
+        icon: 'pi-graduation-cap',
+        label: 'Мои курсы',
+        action: () => {},
+    },
+    {
+        icon: 'pi-sliders-h',
+        label: 'Настройки',
+        action: () => {},
+    },
+    {
+        icon: 'pi-sign-out',
+        label: 'Выход',
+        action: logOut,
+    }
+]);
 
 watch(
     () => authorized.value,

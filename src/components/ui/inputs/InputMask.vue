@@ -1,22 +1,13 @@
 <template>
-    <FloatLabel>
-        <InputText
-            :id="props.name"
-            v-model="internalValue"
-            :placeholder="props.placeholder"
-            v-bind="$attrs"
-        />
-        <label
-            :for="props.name"
-        >
-            {{ props.label }}
-        </label>
-    </FloatLabel>
+    <InputMask
+        v-model="internalValue"
+        :placeholder="props.placeholder"
+        v-bind="$attrs"
+    />
 </template>
 
 <script setup>
-import InputText from 'primevue/inputtext';
-import FloatLabel from 'primevue/floatlabel';
+import InputMask from 'primevue/inputmask';
 
 import { ref, watch } from 'vue';
 
@@ -24,16 +15,6 @@ const props = defineProps({
     value: {
         type: String,
         default: undefined,
-    },
-
-    name: {
-        type: String,
-        default: 'name',
-    },
-
-    label: {
-        type: String,
-        default: '',
     },
 
     placeholder: {
@@ -64,7 +45,8 @@ watch(
 </script>
 
 <style scoped>
-:deep(.p-floatlabel), :deep(.p-inputtext) {
-    @apply w-full;
+.p-inputtext {
+    width: 100%;
+    flex: 1;
 }
 </style>

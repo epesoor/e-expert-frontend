@@ -7,15 +7,17 @@
         <template #default="properties">
             <div class="flex flex-col">
                 <div
-                    v-if="label"
+                    v-if="props.label"
                     class="mb-2 text-sm font-medium"
                 >
                     {{ props.label }}
                 </div>
-                <TextInput
+                <InputMask
                     v-bind="attributes"
                     :value="properties.value"
                     :invalid="hasError"
+                    mask="+7 (799) 999-99-99"
+                    :placeholder="props.placeholder"
                     @update:value="val => properties.change(val)"
                 />
                 <div
@@ -31,7 +33,7 @@
 
 <script setup>
 import { FinalField } from 'vue-final-form';
-import TextInput from '@/components/ui/inputs/TextInput.vue';
+import InputMask from '@/components/ui/inputs/InputMask.vue';
 
 import { useAttrs, computed } from 'vue';
 import { useFieldError } from '@/composables/useFieldError';
@@ -45,6 +47,11 @@ const props = defineProps({
     label: {
         type: String,
         default: '',
+    },
+
+    placeholder: {
+        type: String,
+        default: '+7 (7__) ___-__-__'
     },
 
     validate: {

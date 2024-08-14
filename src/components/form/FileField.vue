@@ -12,7 +12,7 @@
                 >
                     {{ props.label }}
                 </div>
-                <TextInput
+                <FileInput
                     v-bind="attributes"
                     :value="properties.value"
                     :invalid="hasError"
@@ -31,7 +31,7 @@
 
 <script setup>
 import { FinalField } from 'vue-final-form';
-import TextInput from '@/components/ui/inputs/TextInput.vue';
+import FileInput from '@/components/ui/inputs/FileInput.vue';
 
 import { useAttrs, computed } from 'vue';
 import { useFieldError } from '@/composables/useFieldError';

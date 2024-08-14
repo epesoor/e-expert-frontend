@@ -2,14 +2,14 @@
 // eslint-disable-next-line vue/max-len
 export const required = value => (value || typeof value === 'number' ? undefined : 'Это поле не может быть пустым');
 
-// export const email = value =>
-//     value &&
+export const email = value =>
+    value &&
     // eslint-disable-next-line vue/max-len
-//     !/^(?!.*[.][.])[a-zA-Z0-9](?:[a-zA-Z0-9._+%!#$&'*/=?^`{|}~-]{0,62}[a-zA-Z0-9])?@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*(?:\.[a-zA-Z0-9]{2,})))$/i.test(
-//         value
-//     )
-//         ? i18n.global.t('validation.email')
-//         : undefined;
+    !/^(?!.*[.][.])[a-zA-Z0-9](?:[a-zA-Z0-9._+%!#$&'*/=?^`{|}~-]{0,62}[a-zA-Z0-9])?@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*(?:\.[a-zA-Z0-9]{2,})))$/i.test(
+        value
+    )
+        ? 'Неверно введен email'
+        : undefined;
 
 // export const maxLength = max => value =>
 //     value && value.length > max

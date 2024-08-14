@@ -6,6 +6,12 @@
     >
         <template #default="properties">
             <div class="flex flex-col">
+                <div
+                    v-if="label"
+                    class="mb-2 text-sm font-medium"
+                >
+                    {{ props.label }}
+                </div>
                 <PasswordInput
                     v-bind="attributes"
                     :value="properties.value"
@@ -35,7 +41,7 @@
 
 <script setup>
 import { FinalField } from 'vue-final-form';
-import PasswordInput from '@/components/ui/PasswordInput.vue';
+import PasswordInput from '@/components/ui/inputs/PasswordInput.vue';
 
 import { useAttrs, computed } from 'vue';
 import { useFieldError } from '@/composables/useFieldError';
@@ -45,6 +51,11 @@ const props = defineProps({
     name: {
         type: String,
         required: true,
+    },
+
+    label: {
+        type: String,
+        default: '',
     },
 
     validate: {

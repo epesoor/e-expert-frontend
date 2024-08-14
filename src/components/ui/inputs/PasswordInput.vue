@@ -1,32 +1,24 @@
 <template>
-    <FloatLabel>
-        <Password
-            v-model="internalValue"
-            :placeholder="props.placeholder"
-            :feedback="props.feedback"
-            v-bind="$attrs"
-        >
-            <template #header>
-                <slot name="header" />
-            </template>
-            <template #content>
-                <slot name="content" />
-            </template>
-            <template #footer>
-                <slot name="footer" />
-            </template>
-        </Password>
-        <label
-            :for="props.name"
-        >
-            {{ props.label }}
-        </label>
-    </FloatLabel>
+    <Password
+        v-model="internalValue"
+        :placeholder="props.placeholder"
+        :feedback="props.feedback"
+        v-bind="$attrs"
+    >
+        <template #header>
+            <slot name="header" />
+        </template>
+        <template #content>
+            <slot name="content" />
+        </template>
+        <template #footer>
+            <slot name="footer" />
+        </template>
+    </Password>
 </template>
 
 <script setup>
 import Password from 'primevue/password';
-import FloatLabel from 'primevue/floatlabel';
 
 import { ref, watch } from 'vue';
 

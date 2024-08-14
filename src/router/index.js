@@ -13,6 +13,11 @@ const router = createRouter({
             path: '/login',
             component: () => import('@/views/auth/Login.vue'),
         },
+        {
+            name: 'application',
+            path: '/applicaton/:courseId',
+            component: () => import('@/views/application/Index.vue'),
+        },
     ],
 });
 

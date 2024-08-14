@@ -66,6 +66,7 @@
                         severity="danger"
                         class="w-full"
                         outlined
+                        @click="openRoute('application', {courseId: i})"
                     >
                         Оставить заявку
                     </Button>
@@ -76,8 +77,18 @@
 </template>
 
 <script setup>
-import Dropdown from '@/components/ui/Dropdown.vue';
+import Dropdown from '@/components/ui/inputs/Dropdown.vue';
 import Button from '@/components/ui/Button.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+function openRoute(name, params) {
+    router.push({
+        name,
+        params,
+    });
+}
 </script>
 
 <style scoped>

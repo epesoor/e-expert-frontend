@@ -3,7 +3,7 @@
         <Loader />
         <Alert />
         <Header />
-        <div class="flex flex-col flex-1 container mx-auto">
+        <div class="flex flex-col flex-1 container mx-auto p-5">
             <router-view />
         </div>
         <Footer />
