@@ -1,13 +1,12 @@
 <template>
-    <InputText
+    <Checkbox
         v-model="internalValue"
-        :placeholder="props.placeholder"
         v-bind="$attrs"
     />
 </template>
 
 <script setup>
-import InputText from 'primevue/inputtext';
+import Checkbox from 'primevue/checkbox';
 
 import { ref, watch } from 'vue';
 
@@ -15,11 +14,6 @@ const props = defineProps({
     value: {
         type: String,
         default: undefined,
-    },
-
-    placeholder: {
-        type: String,
-        default: '',
     },
 });
 

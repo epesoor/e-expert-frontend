@@ -1,28 +1,20 @@
 <template>
     <div class="dropdown-container">
-        <FloatLabel>
-            <Select
-                :id="props.name"
-                v-model="internalValue"
-                :options="props.options"
-                :option-label="props.optionLabel"
-                :option-value="props.optionValue"
-                :placeholder="props.placeholder"
-                empty-message="нет доступных вариантов"
-                v-bind="$attrs"
-            />
-            <label
-                :for="props.name"
-            >
-                {{ props.label }}
-            </label>
-        </FloatLabel>
+        <Select
+            :id="props.name"
+            v-model="internalValue"
+            :options="props.options"
+            :option-label="props.optionLabel"
+            :option-value="props.optionValue"
+            :placeholder="props.placeholder"
+            empty-message="нет доступных вариантов"
+            v-bind="$attrs"
+        />
     </div>
 </template>
 
 <script setup>
 import Select from 'primevue/select';
-import FloatLabel from 'primevue/floatlabel';
 
 import { ref, watch } from 'vue';
 

@@ -1,24 +1,29 @@
 <template>
     <div class="flex flex-col mt-10 py-8 px-4">
-        <div class="flex items-center justify-center gap-6">
-            <Dropdown
-                class="max-w-56"
-                name="study_type"
-                label="Тип обучения"
-                :options="[]"
-            />
-            <Dropdown
-                class="max-w-56"
-                name="study_format"
-                label="Формат обучения"
-                :options="[]"
-            />
-            <Button
-                class="w-full max-w-56"
-            >
-                Показать
-            </Button>
-        </div>
+        <Form
+            :initial-values="{}"
+            :submit="handleFormSubmit"
+        >
+            <div class="flex justify-center gap-6">
+                <SelectField
+                    class="max-w-56"
+                    name="study_type"
+                    label="Тип обучения"
+                    :options="[]"
+                />
+                <SelectField
+                    class="max-w-56"
+                    name="study_format"
+                    label="Формат обучения"
+                    :options="[]"
+                />
+                <Button
+                    class="mt-auto w-full max-w-56"
+                >
+                    Показать
+                </Button>
+            </div>
+        </Form>
         <div class="mt-16 flex flex-wrap justify-center gap-6">
             <div
                 v-for="i in 10"
@@ -77,7 +82,8 @@
 </template>
 
 <script setup>
-import Dropdown from '@/components/ui/inputs/Dropdown.vue';
+import Form from '@/components/form/Form.vue';
+import SelectField from '@/components/form/SelectField.vue';
 import Button from '@/components/ui/Button.vue';
 import { useRouter } from 'vue-router';
 

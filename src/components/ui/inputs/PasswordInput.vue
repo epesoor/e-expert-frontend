@@ -28,16 +28,6 @@ const props = defineProps({
         default: undefined,
     },
 
-    name: {
-        type: String,
-        default: 'name',
-    },
-
-    label: {
-        type: String,
-        default: '',
-    },
-
     placeholder: {
         type: String,
         default: '',
